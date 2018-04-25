@@ -1,6 +1,9 @@
 const {Router} = require("express");
 const router = Router();
 
+// router.use("/", require("./client"));
+
+
 var session = require('express-session')
 router.use(session({
     secret: 'llt',  //加严加密
