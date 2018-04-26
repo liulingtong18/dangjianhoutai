@@ -13,6 +13,7 @@ router.post('/add',(req,res)=>{
           });
           return
       }
+      console.log(data)
       res.json({
           data: "success",
           code: 200,
@@ -48,8 +49,8 @@ router.post("/get", (req, res) => {
     })
 });
 router.post('/update',(req,res)=>{
-    let {id,pic,priority,status,title,_id} = req.body;
-    slideShows.update({_id: id},{$set:{pic,priority,status,title,url:_id,updateTime:  new Date()}},(err,data)=>{
+    let {id,pic,priority,status,title,url} = req.body;
+    slideShows.update({_id: id},{$set:{pic,priority,status,title,url,updateTime:  new Date()}},(err,data)=>{
         if(err){
             res.json({
                 data: err,
