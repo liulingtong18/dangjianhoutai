@@ -12,15 +12,7 @@ var crmUsersSchema = new mongoose.Schema({
     username:{
         type: String,
         require: true
-    },
-    createTime:{
-        type: Date,
-        default: Date.now()
-    },
-    updateTime: {
-        type: Date,
-        default: Date.now()
     }
-},{versionKey: false})
+},{versionKey: false,timestamps: {createAt: "createTime",updateAt: "updateTime"}})
 //去掉自动加入的-v：0
 module.exports = mongoose.model("crmUsers",crmUsersSchema,"crmUsers")
